@@ -6,7 +6,7 @@ Documentation can be found here: https://docs.microsoft.com/en-us/rest/api/azure
 
 ## Files
 ### test.sh
-This is the draft bash script for testing if the pipeline builds. Includes logic that checks pipeline yml file to see if it actually has the necessary commands. For now, its just build.
+This is the draft bash script for testing if the pipeline builds. Includes logic that checks pipeline yml file to see if it actually has the necessary commands. For now, it's just build.
 
 ### azure-pipelines.yml
 Test yml file to check if the the bash script works. Will need to be removed for actual batch, the bash script would need to change the pipeline file the bash script is testing. 
