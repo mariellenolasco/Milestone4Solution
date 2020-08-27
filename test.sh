@@ -1,5 +1,8 @@
 #!/bin/bash 
-http_response=$(curl -s -o response.txt -w "%{http_code}" https://dev.azure.com/marielletnolasco/Milestone4Solution/_apis/build/status/5?api-version=6.0-preview.1)
+organization=$(sed '1q;d' creds.txt)
+project=$(sed '2q;d' creds.txt)
+definition=$(sed '3q;d' creds.txt)
+http_response=$(curl -s -o response.txt -w "%{http_code}" https://dev.azure.com/${organization}/${project}/_apis/build/status/${definition}?api-version=6.0-preview.1)
 if [ $http_response = "200" ] 
 then
     echo "Server responsive"
@@ -21,5 +24,5 @@ then
         echo "Failed!"
     fi
 else
-echo "Server unresponsive"
+echo "Server unresponsive. Please check if your credentials are valid"
 fi

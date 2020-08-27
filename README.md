@@ -10,3 +10,6 @@ This is the draft bash script for testing if the pipeline builds. Includes logic
 
 ### azure-pipelines.yml
 Test yml file to check if the the bash script works. Will need to be removed for actual batch, the bash script would need to change the pipeline file the bash script is testing. 
+
+### creds.txt
+This is where you put in your pipeline credentials. First line must be the organization, second line the project, and the third line will be the definition id of your pipeline.
