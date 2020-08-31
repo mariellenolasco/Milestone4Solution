@@ -10,7 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
   
 variables:
-  buildConfiguration: '/Milestone3/Milestone3.sln'
+  buildConfiguration: '/Milestone3'
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
