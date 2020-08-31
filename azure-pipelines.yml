@@ -10,10 +10,10 @@ pool:
   vmImage: 'ubuntu-latest'
   
 variables:
-  buildConfiguration: '/Milestone3'
+  buildConfiguration: 'Release'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
+- script: dotnet build ./Milestone3 --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
