@@ -30,7 +30,8 @@ steps:
   displayName: dotnet test
   inputs:
     command: 'test'
-    arguments: ./Milestone3 --configuration $(buildConfiguration) --collect "Code Coverage"
+    projects: '**/*Tests/*.csproj'
+    arguments: --configuration $(buildConfiguration) --collect "Code Coverage"
 - task: PublishCodeCoverageResults@1
   displayName: publish code coverage
   inputs:
