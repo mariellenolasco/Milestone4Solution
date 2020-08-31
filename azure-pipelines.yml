@@ -20,4 +20,4 @@ steps:
   displayName: dotnet test
   inputs:
     command: 'test'
-    arguments: --configuration $(buildConfiguration) --collect "Code Coverage"
+    arguments: ./Milestone3 --configuration $(buildConfiguration) --collect "Code Coverage"
