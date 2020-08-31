@@ -42,6 +42,12 @@ steps:
 - task: SonarCloudPublish@1
   displayName: publish code analysis
 
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet publish and zip'
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    zipAfterPublish: true
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
