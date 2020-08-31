@@ -1,0 +1,9 @@
+C:\Revature\CapstoneDemos\Milestone2Demo\Milestone2\Lodging.Repository\bin\Debug\netstandard2.0\Lodging.Repository.deps.json
+C:\Revature\CapstoneDemos\Milestone2Demo\Milestone2\Lodging.Repository\bin\Debug\netstandard2.0\Lodging.Repository.dll
+C:\Revature\CapstoneDemos\Milestone2Demo\Milestone2\Lodging.Repository\bin\Debug\netstandard2.0\Lodging.Repository.pdb
+C:\Revature\CapstoneDemos\Milestone2Demo\Milestone2\Lodging.Repository\obj\Debug\netstandard2.0\Lodging.Repository.csprojAssemblyReference.cache
+C:\Revature\CapstoneDemos\Milestone2Demo\Milestone2\Lodging.Repository\obj\Debug\netstandard2.0\Lodging.Repository.csproj.CoreCompileInputs.cache
+C:\Revature\CapstoneDemos\Milestone2Demo\Milestone2\Lodging.Repository\obj\Debug\netstandard2.0\Lodging.Repository.AssemblyInfoInputs.cache
+C:\Revature\CapstoneDemos\Milestone2Demo\Milestone2\Lodging.Repository\obj\Debug\netstandard2.0\Lodging.Repository.AssemblyInfo.cs
+C:\Revature\CapstoneDemos\Milestone2Demo\Milestone2\Lodging.Repository\obj\Debug\netstandard2.0\Lodging.Repository.dll
+C:\Revature\CapstoneDemos\Milestone2Demo\Milestone2\Lodging.Repository\obj\Debug\netstandard2.0\Lodging.Repository.pdb
