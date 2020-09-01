@@ -36,7 +36,7 @@ namespace Lodging.Models
 
             if (isValidName != null) validationResults = validationResults.Append(new ValidationResult(isValidName));
             if (isValidBathroomCount != null) validationResults = validationResults.Append(new ValidationResult(isValidBathroomCount));
-            validationResults.Concat(Location.Validate(new ValidationContext(Location)));
+            validationResults = validationResults.Concat(Location.Validate(new ValidationContext(Location)));
             return validationResults;
         }
     }

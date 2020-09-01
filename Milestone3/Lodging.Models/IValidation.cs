@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Lodging.Models
+﻿namespace Lodging.Models
 {
-    interface IValidation
+    internal interface IValidation
     {
         string ValidateString(string input);
-        string ValidateDigit(double input);
 
+        string ValidateDigit(double input);
     }
 }

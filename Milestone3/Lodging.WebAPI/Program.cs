@@ -23,7 +23,7 @@ namespace Lodging.WebAPI
         }
         catch (Exception ex)
         {
-          Console.WriteLine("An error occurred seeding the database with test messages. Error: {Message}", ex.Message);
+          Console.WriteLine("An error occurred seeding the database with test messages. Error: {0}", ex.Message);
         }
       }
       host.Run();

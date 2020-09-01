@@ -20,7 +20,7 @@ namespace Lodging.WebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
-            return Ok(await _unitOfWork.Rental.SelectAsync()); ;
+            return Ok(await _unitOfWork.Rental.SelectAsync()); 
         }
 
         // GET: api/Rental/5
