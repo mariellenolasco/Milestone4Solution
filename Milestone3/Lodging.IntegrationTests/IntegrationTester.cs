@@ -5,6 +5,7 @@ using Xunit;
 using Xunit.Priority;
 namespace Lodging.IntegrationTests
 {
+  [TestCaseOrderer(PriorityOrderer.Name, PriorityOrderer.Assembly)]
   public class IntegrationTester : IClassFixture<CustomWebApplicationFactoryInMemDB<Startup>>
   {
     private readonly HttpClient _client;
@@ -43,6 +44,7 @@ namespace Lodging.IntegrationTests
       Assert.Equal(System.Net.HttpStatusCode.OK, LocationExists.StatusCode);
 
     }
+
     /*
      * <summary>
      * (url, post data) => checks that post is unsuccessful with
@@ -51,7 +53,6 @@ namespace Lodging.IntegrationTests
      * </summary>
      */
     [MemberData(nameof(StaticTestingData.Post422Requests), MemberType = typeof(StaticTestingData))]
-    [Theory]
     public async void CheckInvalid422PostResponse(string url, string data)
     {
       //arrange
@@ -102,7 +103,6 @@ namespace Lodging.IntegrationTests
     {
       //act
       var r = await _client.GetAsync(url);
-      Console.WriteLine(await r.Content.ReadAsStringAsync());
       //assert
       //response status code is 404
       Assert.Equal(System.Net.HttpStatusCode.NotFound, r.StatusCode);
@@ -127,6 +127,36 @@ namespace Lodging.IntegrationTests
       //assert
       //response status code 202
       Assert.Equal(System.Net.HttpStatusCode.NoContent, r.StatusCode);
+    }
+    /*
+    * <summary>
+    * (url) =>  checks that put is successful with:
+     *                     202: Accepted
+     *                     Fields match on newly updated put
+     *                     
+    * </summary>
+    */
+    [MemberData(nameof(StaticTestingData.PutRequests), MemberType = typeof(StaticTestingData))]
+    [Theory]
+    public async void CheckPutResponse(string url, object updatedData)
+    {
+      //arrange
+      var httpContent = new StringContent(updatedData.ToString());
+      httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+
+      //act
+      var r = await _client.PutAsync(url, httpContent);
+
+      //assert
+      //checks if response exists
+      Assert.NotNull(r.Content);
+      //checks 202
+      Assert.Equal(System.Net.HttpStatusCode.Accepted, r.StatusCode);
+      //Checks if fields match newly updated input
+      var content = await r.Content.ReadAsStringAsync();
+      Assert.Contains("Updated Info", content);
+
+
     }
     /*
     * <summary>
