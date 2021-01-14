@@ -4,6 +4,7 @@ trigger:
 - master
 
 pool:
+#setting the environment where to run pipeline
   vmImage: 'windows-latest'
   
 variables:
