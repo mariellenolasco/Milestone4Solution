@@ -19,8 +19,8 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore ${{solution}}
+      run: dotnet restore ${{env.solution}}
     - name: Build
-      run: dotnet build --no-restore ${{solution}}
+      run: dotnet build --no-restore ${{env.solution}}
     - name: Test
-      run: dotnet test --no-build --verbosity normal 
+      run: dotnet test --no-build --verbosity normal ../Milestone3/
