@@ -23,4 +23,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore ${{env.solution}}
     - name: Test
-      run: dotnet test --no-build --verbosity normal ../Milestone3/
+      run: dotnet test --no-build --verbosity normal ./Milestone3/
